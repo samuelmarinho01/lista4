@@ -1,0 +1,21 @@
+package br.usp.ime.mac321.lista04.ex1;
+
+public class Fibonacci {
+	
+	public static int fibonacci(int num) {
+		int f1=0,f2=1,f;
+		if(num<0)
+			return -1;
+		
+		do{
+		  f=f1+f2;
+		  f1=f2;
+		  f2=f;
+		  num--;
+		  }while(num>1);
+	
+		return f;
+	}
+	
+
+}
