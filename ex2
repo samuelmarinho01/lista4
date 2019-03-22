@@ -1,0 +1,80 @@
+package br.usp.ime.mac321.lista05.ex2;
+
+public class Funcionario {
+	String nome;
+	String sobrenome;
+	String sector;
+	double salary;
+	static boolean membro=true;
+
+	
+	 public Funcionario(String primeiroNome, String segundoNome,String setor, double salario) {
+	 
+	 nome=primeiroNome;
+	 sobrenome=segundoNome;
+	 sector=setor;
+	 salary=salario;
+	 
+	 }
+	 
+	 public String nomeCompletoFormatado() {
+		 String complete= nome +" "+sobrenome;
+		 return complete;
+		 
+	 }
+	 
+	 public String salarioFormatado() {
+		 String money ="R$"+String.format("%.2f", salary);
+		 return money;
+		 
+	 }
+	 public double aumentarSalario(double raise) {
+		 if (raise>0)
+			 salary=salary+raise;
+		 return salary;
+	 }
+	 
+	 public boolean trocarDepartamento(String s) {
+		
+		 if(s.length()>3 || s.length()<3 )
+			return false;
+		 else {
+			 sector=s;
+			 return true;
+			 
+		 }
+		 
+	 }
+	 
+	 public String departamentoFormatado() {
+		 String d="Departamento "+sector;
+		 return d;
+		 
+	 }
+	 
+	 public String informacoesDetalhadas() {
+		 String tudao=this.nomeCompletoFormatado()+", "+this.salarioFormatado()+", "+this.departamentoFormatado();
+		 
+		 return tudao;
+	 }
+	 
+	 public boolean ativo() {
+		 if (Funcionario.membro)
+			return true;
+		else
+			return false; 
+	 }
+	 
+	 public void demitirFuncionario() {
+		Funcionario.membro=false;
+	 }
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	}
